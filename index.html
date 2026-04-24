@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Меню лаборатории</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI';
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+header {
+    text-align: center;
+    background: rgba(0,0,0,0.4);
+    padding: 20px;
+    position: relative;
+}
+
+.logo {
+    width: 100px;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 10px;
+    border: none;
+    background: #ff7e5f;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ff3d00;
+}
+
+.lang {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.days {
+    text-align: center;
+    margin: 20px;
+}
+
+.menu {
+    display: none;
+    padding: 20px;
+}
+
+.active {
+    display: block;
+}
+
+.card {
+    background: white;
+    color: black;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 15px auto;
+    max-width: 320px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.price {
+    color: green;
+    font-weight: bold;
+}
+</style>
+
+<script>
+let lang = "ru";
+
+function switchLang() {
+    lang = (lang === "ru") ? "kz" : "ru";
+    document.querySelectorAll("[data-ru]").forEach(el => {
+        el.innerText = el.getAttribute("data-" + lang);
+    });
+}
+
+function showDay(id) {
+    document.querySelectorAll(".menu").forEach(m => m.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+}
+</script>
+
+</head>
+
+<body>
+
+<header>
+<img src="logo.png" class="logo">
+
+<h1 data-ru="Высший колледж Казпотребсоюза г.Астана"
+    data-kz="Астана қаласы Қазтұтынуодағының жоғары колледжі"></h1>
+
+<h2 data-ru="Лаборатория ЦК «Организация питания»"
+    data-kz="Тамақтандыруды ұйымдастыру ЦК зертханасы"></h2>
+
+<div class="lang">
+<button onclick="switchLang()">RU / KZ</button>
+</div>
+</header>
+
+<div class="days">
+<button onclick="showDay('mon')">Пн</button>
+<button onclick="showDay('tue')">Вт</button>
+<button onclick="showDay('wed')">Ср</button>
+<button onclick="showDay('thu')">Чт</button>
+<button onclick="showDay('fri')">Пт</button>
+</div>
+
+<!-- ПОНЕДЕЛЬНИК -->
+<div id="mon" class="menu active">
+
+<div class="card">
+<img src="https://source.unsplash.com/300x200/?meatballs">
+<h3 data-ru="Тефтели с пюре" data-kz="Картоп пюресімен тефтели"></h3>
+<p data-ru="Богато белком, дает энергию"
+   data-kz="Ақуызға бай, энергия береді"></p>
+<p>КБЖУ: 350 ккал / Б20 Ж15 У30</p>
+<div class="price">600 тг</div>
+</div>
+
+<div class="card">
+<img src="https://source.unsplash.com/300x200/?salad">
+<h3 data-ru="Оливье" data-kz="Оливье салаты"></h3>
+<p data-ru="Содержит витамины"
+   data-kz="Дәрумендерге бай"></p>
+<p>КБЖУ: 250 ккал</p>
+<div class="price">250 тг</div>
+</div>
+
+<div class="card">
+<img src="https://source.unsplash.com/300x200/?pizza">
+<h3 data-ru="Мини пицца" data-kz="Мини пицца"></h3>
+<p>КБЖУ: 300 ккал</p>
+<div class="price">350 тг</div>
+</div>
+
+</div>
+
+<!-- ВТОРНИК -->
+<div id="tue" class="menu">
+
+<div class="card">
+<img src="https://source.unsplash.com/300x200/?borsch">
+<h3 data-ru="Борщ" data-kz="Борщ"></h3>
+<p data-ru="Полезен для пищеварения"
+   data-kz="Ас қорытуға пайдалы"></p>
+<p>КБЖУ: 200 ккал</p>
+<div class="price">200 тг</div>
+</div>
+
+<div class="card">
+<img src="https://source.unsplash.com/300x200/?crab-salad">
+<h3 data-ru="Крабовый салат" data-kz="Краб салаты"></h3>
+<p>КБЖУ: 240 ккал</p>
+<div class="price">250 тг</div>
+</div>
+
+<div class="card">
+<img src="https://source.unsplash.com/300x200/?sausage-roll">
+<h3 data-ru="Сосиска в тесте" data-kz="Қамырдағы сосиска"></h3>
+<p>КБЖУ: 280 ккал</p>
+<div class="price">250 тг</div>
+</div>
+
+</div>
+
+<!-- СРЕДА -->
+<div id="wed" class="menu">
+
+<div class="card">
+<img src="https://source.unsplash.com/300x200/?meatballs">
+<h3 data-ru="Тефтели" data-kz="Тефтели"></h3>
+<p>КБЖУ: 350 ккал</p>
+<div class="price">600 тг</div>
+</div>
+
+<div class="card">
+<img src="https://source.unsplash.com/300x200/?salad">
+<h3 data-ru="Оливье" data-kz="Оливье"></h3>
+<p>КБЖУ: 250 ккал</p>
+<div class="price">250 тг</div>
+</div>
+
+<div class="card">
+<img src="https://source.unsplash.com/300x200/?pie">
+<h3 data-ru="Пирожки" data-kz="Пирожки"></h3>
+<p>КБЖУ: 300 ккал</p>
+<div class="price">300 тг</div>
+</div>
+
+</div>
+
+<!-- ЧЕТВЕРГ -->
+<div id="thu" class="menu">
+
+<div class="card">
+<img src="https://source.unsplash.com/300x200/?borsch">
+<h3 data-ru="Борщ" data-kz="Борщ"></h3>
+<p>КБЖУ: 200 ккал</p>
+<div class="price">200 тг</div>
+</div>
+
+<div class="card">
+<img src="https://source.unsplash.com/300x200/?crab-salad">
+<h3 data-ru="Крабовый салат" data-kz="Краб салаты"></h3>
+<p>КБЖУ: 240 ккал</p>
+<div class="price">250 тг</div>
+</div>
+
+<div class="card">
+<img src="https://source.unsplash.com/300x200/?pizza">
+<h3 data-ru="Мини пицца" data-kz="Мини пицца"></h3>
+<p>КБЖУ: 300 ккал</p>
+<div class="price">350 тг</div>
+</div>
+
+</div>
+
+<!-- ПЯТНИЦА -->
+<div id="fri" class="menu">
+
+<div class="card">
+<img src="https://source.unsplash.com/300x200/?meatballs">
+<h3 data-ru="Тефтели" data-kz="Тефтели"></h3>
+<p>КБЖУ: 350 ккал</p>
+<div class="price">600 тг</div>
+</div>
+
+<div class="card">
+<img src="https://source.unsplash.com/300x200/?salad">
+<h3 data-ru="Оливье" data-kz="Оливье"></h3>
+<p>КБЖУ: 250 ккал</p>
+<div class="price">250 тг</div>
+</div>
+
+<div class="card">
+<img src="https://source.unsplash.com/300x200/?sausage-roll">
+<h3 data-ru="Сосиска в тесте" data-kz="Қамырдағы сосиска"></h3>
+<p>КБЖУ: 280 ккал</p>
+<div class="price">250 тг</div>
+</div>
+
+</div>
+
+</body>
+</html>
