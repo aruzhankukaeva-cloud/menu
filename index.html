@@ -89,7 +89,7 @@ let lang = "ru";
 function switchLang() {
     lang = (lang === "ru") ? "kz" : "ru";
     document.querySelectorAll("[data-ru]").forEach(el => {
-        el.innerText = el.getAttribute("data-" + lang);
+        el.textContent = el.getAttribute("data-" + lang);
     });
 }
 
@@ -129,8 +129,13 @@ function showSection(id) {
 </header>
 
 <div class="menu-type">
-<button onclick="showSection('daily')">Ежедневное меню</button>
-<button onclick="showSection('weekly')">Меню по дням</button>
+<button onclick="showSection('daily')" 
+data-ru="Ежедневное меню" 
+data-kz="Күнделікті мәзір">Ежедневное меню</button>
+
+<button onclick="showSection('weekly')" 
+data-ru="Меню по дням недели" 
+data-kz="Апталық мәзір">Меню по дням недели</button>
 </div>  
 
 <div id="daily" style="display:block;">
@@ -203,11 +208,11 @@ function showSection(id) {
 <div id="weekly" style="display:none;">
 
     <div class="days">
-        <button onclick="showDay('mon')">Пн</button>
-        <button onclick="showDay('tue')">Вт</button>
-        <button onclick="showDay('wed')">Ср</button>
-        <button onclick="showDay('thu')">Чт</button>
-        <button onclick="showDay('fri')">Пт</button>
+        <button onclick="showDay('mon')" data-ru="Пн" data-kz="Дс">Пн</button>
+        <button onclick="showDay('tue')" data-ru="Вт" data-kz="Сс">Вт</button>
+        <button onclick="showDay('wed')" data-ru="Ср" data-kz="Ср">Ср</button>
+        <button onclick="showDay('thu')" data-ru="Чт" data-kz="Бс">Чт</button>
+        <button onclick="showDay('fri')" data-ru="Пт" data-kz="Жм">Пт</button>
     </div>
 
 <!-- ПОНЕДЕЛЬНИК -->
