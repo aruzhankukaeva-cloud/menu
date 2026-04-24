@@ -97,6 +97,13 @@ function showDay(id) {
     document.querySelectorAll(".menu").forEach(m => m.classList.remove("active"));
     document.getElementById(id).classList.add("active");
 }
+
+function showSection(id) {
+    document.getElementById('daily').style.display = 'none';
+    document.getElementById('weekly').style.display = 'none';
+    document.getElementById(id).style.display = 'block';
+}
+
 </script>
 
 </head>
@@ -188,7 +195,8 @@ function showDay(id) {
 </div>
 
 </div>
-
+<div id="weekly" style="display:none;">
+    
 <div class="days">
 <button onclick="showDay('mon')" data-ru="Пн" data-kz="Дс">Пн</button>
 <button onclick="showDay('tue')" data-ru="Вт" data-kz="Сс">Вт</button>
@@ -356,6 +364,8 @@ function showDay(id) {
 </div>
 
 </div>
-
+    
+</div>
+    
 </body>
 </html>
